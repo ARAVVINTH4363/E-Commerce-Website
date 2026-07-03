@@ -1,15 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@400;500;700&display=swap');
 
 .reservation-header {
-  background-color: #FCF9F6; /* Off-white bg like your image */
+  background-color: #f8f5ef;
   text-align: center;
   padding: 80px 20px;
   font-family: 'Poppins', sans-serif;
+  height: 300px;
 }
 
 .subtitle {
   font-family: 'Dancing Script', cursive;
-  font-size: 26px;
+  font-size: 48px;
   color: #E31C25;
   margin: 0 0 10px 0;
   font-weight: 600;
@@ -25,6 +26,7 @@
 
 .title .highlight {
   color: #E31C25;
+  font-size: 48px;
 }
 
 .divider {
