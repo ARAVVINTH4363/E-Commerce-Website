@@ -1,0 +1,46 @@
+.marquee-container {
+  width: 100%;
+  background-color: #E31C25; /* Red like your image */
+  overflow: hidden;
+  padding: 12px 0;
+}
+
+.marquee-content {
+  display: flex;
+  width: fit-content;
+  animation: scroll-left-to-right 25s linear infinite;
+}
+
+.marquee-item {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  white-space: nowrap;
+  padding: 0 30px;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  background-color: #F5A5A8; /* Light red dot */
+  border-radius: 50%;
+  margin-right: 30px;
+}
+
+/* Key part: left to right animation */
+@keyframes scroll-left-to-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+/* Pause on hover */
+.marquee-container:hover .marquee-content {
+  animation-play-state: paused;
+}
