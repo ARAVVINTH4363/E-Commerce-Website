@@ -1,0 +1,163 @@
+.about-section {
+  background: #f8f8f8;
+  padding: 80px 50px;
+  font-family: Arial, sans-serif;
+}
+
+.about-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+  align-items: center;
+}
+
+
+.about-left {
+  position: relative;
+  top: 10px;
+  width: 50%;
+  z-index: 0;
+}
+
+.main-img {
+  width: 100%;
+  height: 550px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.small-img {
+  position: absolute;
+  bottom: -25px;
+  right: -25px;
+  width: 220px;
+  height: 220px;
+  border-radius: 20px;
+  object-fit: cover;
+  border: 6px solid white;
+}
+
+.experience-box {
+  position: absolute;
+  left: -20px;
+  top: 30px;
+  background: #ff2c1f;
+  color: white;
+  padding: 25px;
+  border-radius: 20px;
+  text-align: center;
+  width: 130px;
+}
+
+.experience-box h2 {
+  font-size: 45px;
+  margin: 0;
+}
+
+.experience-box p {
+  margin: 5px 0;
+  font-size: 20px;
+}
+
+/* RIGHT */
+.about-right {
+  width: 50%;
+}
+
+.sub-title {
+  color: #ff2c1f;
+  font-size: 35px;
+  font-family: cursive;
+  margin-bottom: 10px;
+}
+
+.about-right h1 {
+  font-size: 64px;
+  line-height: 1.2;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.about-right h1 span {
+  color: #ff2c1f;
+  font-size: 64px;
+}
+
+.line {
+  width: 90px;
+  height: 5px;
+  background: linear-gradient(to right, #ff2c1f, orange);
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.about-text {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.8;
+  margin-bottom: 40px;
+  text-align: justify;
+}
+
+.feature {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 28px;
+  text-align: justify;
+  align-items: flex-start;
+}
+
+.icon {
+  width: 65px;
+  height: 65px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+}
+
+.red {
+  background: #ffe8e8;
+}
+
+.yellow {
+  background: #fff3dc;
+}
+
+.green {
+  background: #e6f7ef;
+}
+
+.feature h3 {
+  font-size: 18px;
+  font-weight: bolder;
+  margin: 0;
+}
+
+.feature p {
+  font-size: 15px;
+  color: #777;
+  margin-top: 8px;
+  line-height: 1.6;
+}
+
+.menu-btn {
+  margin-top: 20px;
+  margin-left: -350px;
+  width: 40%;
+  height: 50px;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(to right, #ff2c1f, #d90000);
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0px 8px 20px rgba(255, 0, 0, 0.544);
+}
+
+.menu-btn:hover {
+  opacity: 0.9;
+}

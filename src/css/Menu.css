@@ -1,0 +1,176 @@
+.menu-section {
+  background: #f7f4ef;
+  padding: 80px 50px;
+  text-align: center;
+}
+
+.menu-subtitle {
+  color: #ff3b1f;
+  font-size: 38px;
+  font-family: cursive;
+}
+
+.menu-title {
+  font-size: 72px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.menu-title span {
+  color: #ff3b1f;
+  font-size: 72px;  
+}
+
+.line {
+  width: 90px;
+  height: 5px;
+  background: linear-gradient(to right, red, orange);
+  margin: 20px auto 50px;
+  border-radius: 20px;
+}
+
+.menu-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 60px;
+  flex-wrap: wrap;
+}
+
+.menu-tabs button {
+  padding: 18px 35px;
+  border: 2px solid #ddd;
+  background: white;
+  border-radius: 40px;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+.menu-tabs .active {
+  background: red;
+  color: white;
+  border: none;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
+}
+
+.menu-card {
+  background: white;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0px 8px 18px rgba(0,0,0,0.08);
+}
+
+.image-box {
+  position: relative;
+}
+
+.image-box img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.badge {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  background: orange;
+  padding: 12px 18px;
+  border-radius: 12px;
+  font-weight: bold;
+}
+
+.heart-icon {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 55px;
+  height: 55px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #bbb;
+}
+
+.menu-content {
+  padding: 25px;
+  text-align: left;
+}
+
+.category {
+  color: orange;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.menu-content h3 {
+  font-size: 34px;
+  margin: 15px 0;
+}
+
+.desc {
+  color: #777;
+  font-size: 22px;
+  line-height: 1.5;
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 25px;
+}
+
+.price {
+  color: red;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.old-price {
+  color: #bbb;
+  text-decoration: line-through;
+  margin-left: 12px;
+  font-size: 20px;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: orange;
+  margin-top: 10px;
+}
+
+.add-btn {
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 50%;
+  background: red;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.view-btn {
+  margin-top: 60px;
+  width: 25%;
+  background: linear-gradient(to right, red, #c70000);
+  color: white;
+  padding: 20px 60px;
+  border: none;
+  border-radius: 40px;
+  font-size: 28px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+}
