@@ -46,7 +46,7 @@ function Reviews() {
   ];
 
   return (
-    <section className="reviews-section">
+    <section className="reviews-section" id="reviews">
       <p className="subtitle">What People Say</p>
       <h1>
         Our Customers <span>Feedback</span>
