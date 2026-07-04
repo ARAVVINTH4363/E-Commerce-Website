@@ -10,7 +10,7 @@ import {
   FaFacebookF,
   FaInstagram,
   FaTiktok,
-  FaYoutube,
+  FaYoutube,  
   FaSearch,
   FaShoppingBag,
   FaTimes,
@@ -54,7 +54,7 @@ const handleSearch = () => {
       <div className="top-bar">
         <div className="top-left">
           <span><FaPhoneAlt /> +1 (800) 123-4567</span>
-          <span><FaEnvelope /> hello@sarabfood.com</span>
+          <span><FaEnvelope />tastytreat@gmail.com</span>
           <span><FaMapMarkerAlt /> 42 Flavor Street, NY</span>
         </div>
 
@@ -219,9 +219,9 @@ const handleSearch = () => {
     </div>
   </div>
 )}
-    
+  
     </>
   );
-};
+};  
 
 export default Header;

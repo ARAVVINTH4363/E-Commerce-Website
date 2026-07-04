@@ -205,6 +205,201 @@ span {
 
 
 
+/* =====================================================
+                TABLET (768px - 1024px)
+===================================================== */
+
+@media screen and (max-width:1024px){
+
+.reservation{
+    padding:40px 30px;
+    gap:25px;
+}
+
+.left-box{
+    width:35%;
+    height:auto;
+    margin:0;
+    padding:30px;
+}
+
+.left-box h2{
+    font-size:28px;
+}
+
+.contact-item{
+    gap:15px;
+}
+
+.contact-item h4{
+    font-size:14px;
+}
+
+.contact-item p{
+    font-size:14px;
+}
+
+.icon-box{
+    width:42px;
+    height:42px;
+    font-size:20px;
+}
+
+.form-box{
+    width:65%;
+    padding:30px;
+}
+
+.row{
+    gap:15px;
+}
+
+input,
+select,
+textarea{
+    padding:14px;
+    font-size:15px;
+}
+
+button{
+    font-size:18px;
+}
+
+}
+
+
+/* =====================================================
+                    MOBILE (<768px)
+===================================================== */
+
+@media screen and (max-width:768px){
+
+.reservation{
+
+    flex-direction:column;
+
+    padding:40px 20px;
+
+    gap:30px;
+}
+
+/* Contact Box */
+
+.left-box{
+
+    width:100%;
+
+    margin:0;
+
+    height:auto;
+
+    padding:25px;
+}
+
+.left-box h2{
+
+    font-size:28px;
+
+    text-align:center;
+}
+
+.contact-text{
+
+    text-align:center;
+
+    margin-bottom:30px;
+}
+
+.contact-item{
+
+    gap:15px;
+
+    margin-bottom:20px;
+}
+
+.icon-box{
+
+    width:45px;
+
+    height:45px;
+
+    min-width:45px;
+
+    font-size:20px;
+}
+
+.contact-item h4{
+
+    font-size:14px;
+}
+
+.contact-item p{
+
+    font-size:14px;
+}
+
+/* Form */
+
+.form-box{
+
+    width:100%;
+
+    padding:25px;
+}
+
+.row{
+
+    flex-direction:column;
+
+    gap:18px;
+
+    margin-bottom:18px;
+}
+
+.row div{
+
+    width:100%;
+}
+
+label{
+
+    font-size:15px;
+
+    font-weight:600;
+}
+
+input,
+select,
+textarea{
+
+    font-size:15px;
+
+    padding:14px;
+}
+
+textarea{
+
+    height:120px;
+}
+
+button{
+
+    width:100%;
+
+    padding:16px;
+
+    font-size:17px;
+}
+
+span{
+
+    font-size:13px;
+}
+
+}
+
+
+
 
 
 .popup {
