@@ -139,7 +139,7 @@ const Reservation = () => {
             <input
               type="text"
               name="fullName"
-              placeholder="John Doe"
+              placeholder="Full Name"
               onChange={handleChange}
             />
             <span>{errors.fullName}</span>
@@ -150,7 +150,7 @@ const Reservation = () => {
             <input
               type="text"
               name="phone"
-              placeholder="9876543210"
+              placeholder="Phone Number"
               onChange={handleChange}
             />
             <span>{errors.phone}</span>
@@ -163,7 +163,7 @@ const Reservation = () => {
             <input
               type="email"
               name="email"
-              placeholder="you@email.com"
+              placeholder="Email"
               onChange={handleChange}
             />
             <span>{errors.email}</span>
