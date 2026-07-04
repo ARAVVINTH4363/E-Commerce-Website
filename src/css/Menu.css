@@ -346,3 +346,267 @@
   border:none;
   box-shadow:0 10px 25px rgba(255,60,48,.35);
 }
+
+
+/* responsive */
+
+/*====================================================
+                TABLET (768px - 1024px)
+=====================================================*/
+
+@media screen and (max-width:1024px){
+
+.menu-section{
+    padding:60px 30px;
+}
+
+.menu-title{
+    font-size:55px;
+}
+
+.menu-title span{
+    font-size:55px;
+}
+
+.menu-subtitle{
+    font-size:28px;
+}
+
+.category-tabs{
+    gap:12px;
+}
+
+.category-tabs .tab{
+
+    min-width:90px;
+
+    font-size:14px;
+}
+
+.menu-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:25px;
+
+    margin-left:0;
+
+    justify-items:center;
+}
+
+.menu-card{
+
+    width:100%;
+
+    max-width:360px;
+
+    height:auto;
+}
+
+.image-box img{
+
+    height:220px;
+}
+
+.menu-content{
+
+    padding:20px;
+}
+
+.menu-content h3{
+
+    font-size:18px;
+}
+
+.desc{
+
+    font-size:15px;
+}
+
+.price,
+.old-price{
+
+    font-size:18px;
+}
+
+.add-btn{
+
+    width:45px;
+
+    height:45px;
+
+    font-size:22px;
+}
+
+.view-btn{
+
+    width:260px;
+
+    min-width:260px;
+
+    font-size:17px;
+}
+
+}
+
+
+/*====================================================
+                MOBILE (<768px)
+=====================================================*/
+
+@media screen and (max-width:768px){
+
+.menu-section{
+
+    padding:40px 20px;
+}
+
+/* Heading */
+
+.menu-title{
+
+    font-size:38px;
+}
+
+.menu-title span{
+
+    font-size:38px;
+}
+
+.menu-subtitle{
+
+    font-size:24px;
+}
+
+.menu-title1{
+
+    height:auto;
+
+    margin-bottom:25px;
+}
+
+/* Filter */
+
+.category-tabs{
+
+    gap:10px;
+
+    margin-bottom:35px;
+}
+
+.category-tabs .tab{
+
+    min-width:90px;
+
+    height:38px;
+
+    font-size:13px;
+
+    padding:0 15px;
+}
+
+/* Cards */
+
+.menu-grid{
+
+    grid-template-columns:1fr;
+
+    margin-left:0;
+
+    gap:25px;
+
+    justify-items:center;
+}
+
+.menu-card{
+
+    width:100%;
+
+    max-width:360px;
+
+    height:auto;
+}
+
+.image-box img{
+
+    height:220px;
+}
+
+.badge{
+
+    padding:8px 14px;
+
+    font-size:13px;
+}
+
+.heart-icon{
+
+    width:45px;
+
+    height:45px;
+}
+
+.menu-content{
+
+    padding:20px;
+}
+
+.category{
+
+    font-size:12px;
+}
+
+.menu-content h3{
+
+    font-size:18px;
+}
+
+.desc{
+
+    font-size:14px;
+
+    line-height:1.5;
+}
+
+.price{
+
+    font-size:18px;
+}
+
+.old-price{
+
+    font-size:16px;
+}
+
+.rating{
+
+    font-size:14px;
+}
+
+.add-btn{
+
+    width:45px;
+
+    height:45px;
+
+    font-size:22px;
+
+    bottom:0;
+}
+
+/* Button */
+
+.view-btn{
+
+    width:100%;
+
+    max-width:320px;
+
+    min-width:unset;
+
+    font-size:16px;
+
+    padding:15px 20px;
+}
+
+}
