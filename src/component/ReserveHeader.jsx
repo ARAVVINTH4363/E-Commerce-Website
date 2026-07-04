@@ -3,7 +3,7 @@ import '../css/ReservationHeader.css';
 
 const ReservationHeader = () => {
   return (
-    <section className="reservation-header">
+    <section className="reservation-header" id="reservation">
       <p className="subtitle">Book a Table</p>
       <h1 className="title">
         Make a <span className="highlight">Reservation</span>

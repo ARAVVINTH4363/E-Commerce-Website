@@ -23,7 +23,7 @@ function Main() {
 
 
   return (
-    <section className="hero">
+    <section className="hero"  id="home">
       {/* Top Badge */}
       <div className="top-badge">
         <div className="badge-circle">⭐</div>
@@ -34,10 +34,7 @@ function Main() {
         {/* Left */}
         <div className="hero-left">
           <h1>
-            Delicious <br />
-            <span>Fast Food</span> <br />
-            for Every <br />
-            Moment
+            Delicious <span> Fast Food </span> for Every  Moment
           </h1>
 
           <p>
@@ -59,8 +56,8 @@ function Main() {
           />
 
           {/* Hot Deal */}
-          <div className="floating hot">
-            <div className="icon fire">🔥</div>
+          <div className="floating1 hot">
+            <div className="icon1 fire">🔥</div>
             <div>
               <h3>Hot Deal</h3>
               <p>30% off today</p>
@@ -68,8 +65,8 @@ function Main() {
           </div>
 
           {/* Delivery */}
-          <div className="floating delivery">
-            <div className="icon clock">🕒</div>
+          <div className="floating1 delivery">
+            <div className="icon1 clock">🕒</div>
             <div>
               <h3>20 min</h3>
               <p>Fast delivery</p>
@@ -77,8 +74,8 @@ function Main() {
           </div>
 
           {/* Rating */}
-          <div className="floating rating">
-            <div className="icon star">⭐</div>
+          <div className="floating1 rating">
+            <div className="icon1 star">⭐</div>
             <div>
               <h3>4.9/5</h3>
               <p>2k+ reviews</p>

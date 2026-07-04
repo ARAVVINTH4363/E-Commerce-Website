@@ -70,7 +70,10 @@ function About() {
             </div>
           </div>
 
-          <button className="menu-btn">📖 View Full Menu</button>
+          <button className="menu-btn"onClick={() => document.getElementById("menu").scrollIntoView
+          ({
+             behavior: "smooth",
+          })}>📖 View Full Menu</button>
         </div>
       </div>
     </section>

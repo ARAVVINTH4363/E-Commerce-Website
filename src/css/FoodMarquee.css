@@ -8,7 +8,7 @@
 .marquee-content {
   display: flex;
   width: fit-content;
-  animation: scroll-left-to-right 25s linear infinite;
+  animation: scroll-left-to-right 80s linear infinite;
 }
 
 .marquee-item {
@@ -25,12 +25,12 @@
 .dot {
   width: 6px;
   height: 6px;
-  background-color: #F5A5A8; /* Light red dot */
+  background-color: #F5A5A8; 
   border-radius: 50%;
   margin-right: 30px;
 }
 
-/* Key part: left to right animation */
+
 @keyframes scroll-left-to-right {
   0% {
     transform: translateX(-50%);
@@ -40,7 +40,7 @@
   }
 }
 
-/* Pause on hover */
+
 .marquee-container:hover .marquee-content {
   animation-play-state: paused;
 }

@@ -1,0 +1,117 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.food-modal {
+  width: 900px;
+  max-width: 95%;
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  position: relative;
+}
+
+.modal-left {
+  width: 45%;
+}
+
+.modal-left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal-right {
+  width: 55%;
+  padding: 35px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  border: none;
+  background: #cecccc;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 5px 20px 0px 10px;
+  color: #d37876;
+}
+
+
+.rating1 {
+   color: rgb(237, 193, 83);
+    margin-top: 20px;
+}
+.price-box {
+  margin: 20px 0;
+}
+
+.price1 {
+  color: #e53935;
+  font-size: 38px;
+  font-weight: bold;
+}
+
+.old-price {
+  margin-left: 10px;
+  color: #999;
+  text-decoration: line-through;
+}
+
+.info-boxes {
+  display: flex;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.info-boxes div {
+  background: #f8f8f8;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 50px 0;
+}
+
+.quantity button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid #ff3d2e;
+  background: white;
+  color: #ff3d2e;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.quantity span{
+    margin-top: 20px;
+    font-size: large;
+}
+
+.cart-btn {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 12px;
+  background: #e32219;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}

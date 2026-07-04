@@ -1,5 +1,13 @@
 import React, { useState } from "react";
 import "../css/reserve.css";
+import {
+  FaClock,
+  FaPhoneAlt,
+  FaUsers,
+  FaMapMarkerAlt
+} from "react-icons/fa";
+
+
 
 const Reservation = () => {
   const [formData, setFormData] = useState({
@@ -71,29 +79,56 @@ const Reservation = () => {
   };
 
   return (
-    <section className="reservation">
+    <section className="reservation" >
       <div className="left-box">
         <h2>Contact Info</h2>
-        <p>We're happy to help you plan the perfect dining experience.</p>
 
-        <div className="info">
-          <h4>OPENING HOURS</h4>
-          <p>Wed - Sun, 9 AM - 11 PM</p>
+        <p className="contact-text">
+          We're happy to help you plan the perfect dining experience.
+        </p>
+
+        <div className="contact-item">
+          <div className="icon-box">
+            <FaClock />
+          </div>
+
+          <div>
+            <h4>OPENING HOURS</h4>
+            <p>Wed - Sun, 9 AM - 11 PM</p>
+          </div>
         </div>
 
-        <div className="info">
-          <h4>CALL FOR BOOKING</h4>
-          <p>+1 (800) 123-4567</p>
+        <div className="contact-item">
+          <div className="icon-box">
+            <FaPhoneAlt />
+          </div>
+
+          <div>
+            <h4>CALL FOR BOOKING</h4>
+            <p>+1 (800) 123-4567</p>
+          </div>
         </div>
 
-        <div className="info">
-          <h4>GROUP DINING</h4>
-          <p>Special menus for 10+ guests</p>
+        <div className="contact-item">
+          <div className="icon-box">
+            <FaUsers />
+          </div>
+
+          <div>
+            <h4>GROUP DINING</h4>
+            <p>Special menus for 10+ guests</p>
+          </div>
         </div>
 
-        <div className="info">
-          <h4>LOCATION</h4>
-          <p>42 Flavor Street, NY</p>
+        <div className="contact-item">
+          <div className="icon-box">
+            <FaMapMarkerAlt />
+          </div>
+
+          <div>
+            <h4>LOCATION</h4>
+            <p>42 Flavor Street, NY</p>
+          </div>
         </div>
       </div>
 

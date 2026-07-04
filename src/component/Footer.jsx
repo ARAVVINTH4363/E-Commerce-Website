@@ -1,115 +1,119 @@
-import React from 'react';
-import '../css/Footer.css';
-import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube, FaTiktok } from 'react-icons/fa';
-import { FaLocationDot, FaPhone, FaEnvelope, FaClock } from 'react-icons/fa6';
-import { MdKeyboardArrowRight } from 'react-icons/md';
-import { IoIosArrowUp } from 'react-icons/io';
+import React from "react";
+import "../css/Footer.css";
+import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube, FaTiktok } from "react-icons/fa";
+import { FaLocationDot, FaPhone, FaEnvelope, FaClock } from "react-icons/fa6";
+import { MdKeyboardArrowRight } from "react-icons/md";
+import { IoIosArrowUp } from "react-icons/io";
+import { Link } from "react-scroll";
 
-const Footer = () => {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+export default function Footer({setCategory}){
+  const scrollToTop=()=>window.scrollTo({top:0,behavior:"smooth"});
 
-  return (
-    <footer className="sf-wrapper">
-      <div className="sf-main">
-        <div className="sf-container">
-          
-     
-          <div className="sf-col sf-brand-wrap">
-            <h2 className="sf-logo">Tasty Treat</h2>
-            <p className="sf-brand-text">
-              We bring the world's finest flavors together in a fast, friendly, and affordable experience. Every meal crafted with love.
-            </p>
-            <div className="sf-social">
-              <a href="#" aria-label="Facebook"><FaFacebookF /></a>
-              <a href="#" aria-label="Instagram"><FaInstagram /></a>
-              <a href="#" aria-label="Twitter"><FaTwitter /></a>
-              <a href="#" aria-label="Youtube"><FaYoutube /></a>
-              <a href="#" aria-label="TikTok"><FaTiktok /></a>
-            </div>
-          </div>
+  const handleMenuClick = (category) => {
+  setCategory(category);
 
-      
-          <div className="sf-col">
-            <h3 className="sf-heading">Quick Links</h3>
-            <ul className="sf-link-list">
-              <li><MdKeyboardArrowRight /><a href="#">Home</a></li>
-              <li><MdKeyboardArrowRight /><a href="#">About Us</a></li>
-              <li><MdKeyboardArrowRight /><a href="#">Our Menu</a></li>
-              <li><MdKeyboardArrowRight /><a href="#">Reservation</a></li>
-              <li><MdKeyboardArrowRight /><a href="#">Blog</a></li>
-              <li><MdKeyboardArrowRight /><a href="#">Contact</a></li>
-            </ul>
-          </div>
-
-          
-          <div className="sf-col">
-            <h3 className="sf-heading">Our Menu</h3>
-            <ul className="sf-link-list">
-              <li><MdKeyboardArrowRight /><a href="#">Burgers</a></li>
-              <li><MdKeyboardArrowRight /><a href="#">Pizza</a></li>
-              <li><MdKeyboardArrowRight /><a href="#">Fried Chicken</a></li>
-              <li><MdKeyboardArrowRight /><a href="#">Wraps & Rolls</a></li>
-              <li><MdKeyboardArrowRight /><a href="#">Pasta</a></li>
-              <li><MdKeyboardArrowRight /><a href="#">Desserts</a></li>
-            </ul>
-          </div>
-
-     
-          <div className="sf-col">
-            <h3 className="sf-heading">Get In Touch</h3>
-            <div className="sf-contact-block">
-              <div className="sf-contact-icon"><FaLocationDot /></div>
-              <div>
-                <h4>Address</h4>
-                <p>42 Flavor Street, Manhattan, NY 10001</p>
-              </div>
-            </div>
-            <div className="sf-contact-block">
-              <div className="sf-contact-icon"><FaPhone /></div>
-              <div>
-                <h4>Phone</h4>
-                <p>+1 (800) 123-4567</p>
-              </div>
-            </div>
-            <div className="sf-contact-block">
-              <div className="sf-contact-icon"><FaEnvelope /></div>
-              <div>
-                <h4>Email</h4>
-                <p>hello@sarabfood.com</p>
-              </div>
-            </div>
-            <div className="sf-contact-block">
-              <div className="sf-contact-icon"><FaClock /></div>
-              <div>
-                <h4>Hours</h4>
-                <p>Wed - Sun: 09 AM - 11 PM</p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-
-      <div className="sf-bottom">
-        <div className="sf-bottom-inner">
-          <p className="sf-copyright">
-            © 2026 <span className="sf-text-red">Tasty Treat Restaurant</span>. All Rights Reserved by <span className="sf-text-green">A2S</span>. Made with ❤ Distributed by <span className="sf-text-green">A2S Team</span>
-          </p>
-          <div className="sf-legal-links">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms</a>
-            <a href="#">Cookies</a>
-            <button className="sf-to-top" onClick={scrollToTop} aria-label="Scroll to top">
-              <IoIosArrowUp /> ^
-            </button>
-          </div>
-        </div>
-      </div>
-    </footer>
-  );
+  document.getElementById("menu").scrollIntoView({
+    behavior: "smooth",
+  });
 };
 
-export default Footer;
+
+  return (
+    <footer className="footer" id="footer">
+      <div className="footer-top">
+        <div className="footer-container">
+          <div className="footer-brand">
+            <h2 className="logo1">Tasty <span>Treat</span></h2>
+            <p>We bring the world's finest flavors together in a fast, friendly and affordable experience. Every meal crafted with love.</p>
+            <div className="social">
+              {[FaFacebookF,FaInstagram,FaTwitter,FaYoutube,FaTiktok].map((I,i)=><button key={i}><I/></button>)}
+            </div>
+          </div>
+          <div>
+            <h3>Quick Links</h3>
+            <ul>
+              <li>
+                <MdKeyboardArrowRight />
+                <Link to="home" smooth={true} duration={500}>
+                  Home
+                </Link>
+              </li>
+
+              <li>
+                <MdKeyboardArrowRight />
+                <Link to="about" smooth={true} duration={500}>
+                  About
+                </Link>
+              </li>
+
+              <li>
+                <MdKeyboardArrowRight />
+                <Link to="menu" smooth={true} duration={500}>
+                  Menu
+                </Link>
+              </li>
+
+              <li>
+                <MdKeyboardArrowRight />
+                <Link to="reservation" smooth={true} duration={500}>
+                  Reservation
+                </Link>
+              </li>
+
+              <li>
+                <MdKeyboardArrowRight />
+                <Link to="reviews" smooth={true} duration={500}>
+                  Reviews
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3>Our Menu</h3>
+            <ul>
+              {[
+                  ["BURGERS", "Burgers"],
+                  ["PIZZA", "Pizza"],
+                  ["CHICKEN", "Chicken"],
+                  ["WRAPS", "Wraps"],
+                  ["PASTA", "Pasta"],
+                  ["DESSERTS", "Desserts"],
+                ].map(([value, label]) => (
+                  <li key={value}>
+                    <MdKeyboardArrowRight />
+                    <span
+                      onClick={() => handleMenuClick(value)}
+                      style={{ cursor: "pointer" }}
+                    >
+                      {label}
+                    </span>
+                  </li>
+                ))}
+            </ul>
+          </div>
+          <div>
+            <h3>Get In Touch</h3>
+            <div className="contact">
+              <div className="box">
+                <div className="icon2"><FaLocationDot/></div><div><h4>Address</h4><p>42,Flavor Street, NY</p>
+                </div>
+                </div>
+            <div className="box">
+              <div className="icon2"><FaPhone/></div><div><h4>Phone</h4><p>+1 (800) 123-4567</p></div></div>
+            <div className="box"><div className="icon2"><FaEnvelope/></div><div><h4>Email</h4><p>hello@sarabfood.com</p></div></div>
+            <div className="box"><div className="icon2"><FaClock/></div><div><h4>Hours</h4><p>Wed-Sun : 09AM-11PM</p></div></div></div>
+          </div>
+        </div>
+      </div>
+      <div className="footer-bottom">
+        <div className="bottom-container">
+          <p>© 2026 <span>Tasty Treat</span>. All Rights Reserved.</p>
+          <div className="bottom-links">
+            <a href="/">Privacy Policy</a><a href="/">Terms</a><a href="/">Cookies</a>
+          </div>
+        </div>
+      </div>
+      <button className="scrollTop" onClick={scrollToTop}><IoIosArrowUp/></button>
+    </footer>
+  )
+}

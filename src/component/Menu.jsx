@@ -1,88 +1,78 @@
-import React from "react";
+import React, { useState } from "react";
 import "../css/Menu.css";
 import { FaHeart, FaPlus, FaStar, FaThLarge } from "react-icons/fa";
+import { menuItems } from "../product";
+import FoodModal from "./FoodModel";
+
+function Menu({searchTerm,category,setCategory}) {
+  const categories = [
+            "ALL",
+            "BURGERS",
+            "PIZZA",
+            "CHICKEN",
+            "WRAPS",
+            "DESSERTS",
+            "PASTA",
+          ];
+          
+  const [showAll, setShowAll] = useState(false);
+  const [selectedItem, setSelectedItem] = useState(null);
+  const filteredItems = menuItems.filter((item)=>{
+
+    
 
 
 
-function Menu() {
-  const menuItems = [
-    {
-      category: "BURGERS",
-      title: "Classic Smash Burger",
-      desc: "Double smashed patty, cheddar, caramelized onions, pickles & special sauce",
-      price: "$14.99",
-      oldPrice: "$18.99",
-      rating: 128,
-      image: "https://www.tasteofhome.com/wp-content/uploads/2020/03/Smash-Burgers_EXPS_TOHcom20_246232_B10_06_10b.jpg",
-      badge: "Hot"
-    },
-    {
-      category: "PIZZA",
-      title: "Margherita Royale",
-      desc: "San Marzano tomatoes, buffalo mozzarella, basil & truffle oil",
-      price: "$19.99",
-      oldPrice: "$24.99",
-      rating: 95,
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjBHard5mAX9QPLcbfut7J6FD7qpjE9mTUkAwx4_JR_GK9AloBcBaUK7_j&s=10",
-      badge: "New"
-    },
-    {
-      category: "CHICKEN",
-      title: "Nashville Hot Chicken",
-      desc: "Crispy fried chicken in fiery Nashville spice blend",
-      price: "$12.99",
-      oldPrice: "$16.99",
-      rating: 210,
-      image: "https://i0.wp.com/flavoursofmykitchen.com/wp-content/uploads/2023/01/Snapshot-drumsticks2.png?fit=1920%2C1080&ssl=1",
-      badge: "Best Seller"
-    },
-    {
-      category: "WRAPS",
-      title: "Loaded Fajita Wrap",
-      desc: "Grilled chicken, peppers, sour cream & guacamole",
-      price: "$10.99",
-      oldPrice: "",
-      rating: 74,
-      image: "https://tse2.mm.bing.net/th/id/OIP.Tw7QS4PCraV1OatVf08THgHaEK?pid=Api&P=0&h=180",
-      badge: ""
-    },
-    {
-      category: "DESSERTS",
-      title: "Nutella Lava Cake",
-      desc: "Molten chocolate cake with Nutella center",
-      price: "$8.99",
-      oldPrice: "$11.99",
-      rating: 56,
-      image: "https://tse4.mm.bing.net/th/id/OIP.DOhD4ajkGIG6KBqBX41IpAHaJQ?cb=thfc1falcon4&rs=1&pid=ImgDetMain&o=7&rm=3",
-      badge: "New"
-    },
-    {
-      category: "PASTA",
-      title: "Truffle Mushroom Pasta",
-      desc: "Al dente tagliatelle, wild mushrooms, black truffle",
-      price: "$16.99",
-      oldPrice: "",
-      rating: 88,
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwfp7mxCAzrEqgcDBFhi0Wv0OuBOMwgEb_6i0Hp5fgkyLcg7KwH2wy464&s=10",
-      badge: "Chef’s Pick"
-    }
-  ];
+    const matchCategory =
+        category === "ALL" ||
+        item.category === category || item.title === category;
+
+    const matchSearch =
+        item.category
+            .toLowerCase()
+            .includes(searchTerm.toLowerCase()) || item.title
+            .toLowerCase()
+            .includes(searchTerm.toLowerCase());
+
+    return matchCategory && matchSearch;
+});
+
+
+const displayedItems = showAll
+    ? filteredItems
+    : filteredItems.slice(0,6);
 
   return (
-    <section className="menu-section">
-      <p className="menu-subtitle">What's Cooking</p>
+    <section className="menu-section" id="menu">
+      <div className="menu-title1">
+       <p className="menu-subtitle">What's Cooking</p>
       <h1 className="menu-title">
         Our Delicious <span>Menu</span>
       </h1>
+      </div>
+      
+      
 
+<div className="category-tabs">
+  {categories.map((cat) => (
+    <button
+      key={cat}
+      className={category === cat ? "tab active" : "tab"}
+      onClick={() => setCategory(cat)}
+    >
+      {cat === "ALL"
+        ? "All"
+        : cat.charAt(0) + cat.slice(1).toLowerCase()}
+    </button>
+  ))}
+</div>
 
-     
 
       <div className="menu-grid">
-        {menuItems.map((item, index) => (
+        {displayedItems.map((item, index) => (
           <div className="menu-card" key={index}>
             <div className="image-box">
-              <img src={item.image} alt="" />
+              <img src={item.image} alt={item.title} />
 
               {item.badge && <span className="badge">{item.badge}</span>}
 
@@ -99,6 +89,7 @@ function Menu() {
               <div className="bottom">
                 <div>
                   <span className="price">{item.price}</span>
+
                   {item.oldPrice && (
                     <span className="old-price">{item.oldPrice}</span>
                   )}
@@ -109,7 +100,9 @@ function Menu() {
                   </div>
                 </div>
 
-                <button className="add-btn">
+                <button
+                  className="add-btn"
+                   onClick={() => setSelectedItem(item)}>
                   <FaPlus />
                 </button>
               </div>
@@ -118,9 +111,22 @@ function Menu() {
         ))}
       </div>
 
-      <button className="view-btn">
-        <FaThLarge /> View Full Menu
-      </button>
+      {menuItems.length > 6 && (
+        <button
+          className="view-btn"
+          onClick={() => {setShowAll(!showAll)
+            setCategory("ALL")}}
+  
+        >
+          <FaThLarge />
+          {showAll ? " Show Less" : " View Full Menu"}
+        </button>
+      )}
+
+      {selectedItem && (
+          <FoodModal item={selectedItem}
+            onClose={() => setSelectedItem(null)} />
+        )}
     </section>
   );
 }
