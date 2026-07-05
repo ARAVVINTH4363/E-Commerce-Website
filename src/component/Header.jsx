@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import '../index.css'
 
+import { FaBars } from "react-icons/fa";
+
 import {
   FaPhoneAlt,
   FaEnvelope,
@@ -8,7 +10,7 @@ import {
   FaFacebookF,
   FaInstagram,
   FaTiktok,
-  FaYoutube,
+  FaYoutube,  
   FaSearch,
   FaShoppingBag,
   FaTimes,
@@ -22,7 +24,7 @@ export const Header = ({
 }) => {
 
   const [showSearch, setShowSearch] = useState(false);
-
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const handleCategoryClick = (cat) => {
   setCategory(cat);
@@ -52,7 +54,7 @@ const handleSearch = () => {
       <div className="top-bar">
         <div className="top-left">
           <span><FaPhoneAlt /> +1 (800) 123-4567</span>
-          <span><FaEnvelope /> hello@sarabfood.com</span>
+          <span><FaEnvelope />tastytreat@gmail.com</span>
           <span><FaMapMarkerAlt /> 42 Flavor Street, NY</span>
         </div>
 
@@ -67,38 +69,102 @@ const handleSearch = () => {
 
 
       <nav className="navbar">
-        <div className="logo">
-          <div className="logo-icon">🍴</div>
-          <div>
-            <h1>Tasty Treat</h1>
-            <p>FAST FOOD & RESTAURANT</p>
-          </div>
-        </div>
+  <div className="logo">
+    <div className="logo-icon">🍴</div>
+    <div>
+      <h1>Tasty Treat</h1>
+      <p>FAST FOOD & RESTAURANT</p>
+    </div>
+  </div>
 
-        <ul className="nav-links">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#menu">Menu</a></li>
-          <li><a href="#reservation">Reservation</a></li>
-          <li><a href="#reviews">Reviews</a></li>
-          <li><a href="#footer">Contact</a></li>
-        </ul>
+  <div
+    className="menu-toggle"
+    onClick={() => setMenuOpen(!menuOpen)}
+  >
+    {menuOpen ? <FaTimes /> : <FaBars />}
+  </div>
 
-        <div className="nav-actions">
-          <FaSearch
-  className="search-icon"
-  onClick={() => setShowSearch(true)}
-/>
+  <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
+    <li>
+      <a href="#home" onClick={() => setMenuOpen(false)}>
+        Home
+      </a>
+    </li>
 
+    <li>
+      <a href="#about" onClick={() => setMenuOpen(false)}>
+        About
+      </a>
+    </li>
 
-          <button className="order-btn" onClick={() => document.getElementById("menu").scrollIntoView
-          ({
-             behavior: "smooth",
-          })}>
-             <FaShoppingBag /> Order Now
-          </button>
-        </div>
-      </nav>
+    <li>
+      <a href="#menu" onClick={() => setMenuOpen(false)}>
+        Menu
+      </a>
+    </li>
+
+    <li>
+      <a href="#reservation" onClick={() => setMenuOpen(false)}>
+        Reservation
+      </a>
+    </li>
+
+    <li>
+      <a href="#reviews" onClick={() => setMenuOpen(false)}>
+        Reviews
+      </a>
+    </li>
+
+    <li>
+      <a href="#footer" onClick={() => setMenuOpen(false)}>
+        Contact
+      </a>
+    </li>
+
+    <div className="mobile-actions">
+      <FaSearch
+        className="search-icon"
+        onClick={() => {
+          setShowSearch(true);
+          setMenuOpen(false);
+        }}
+      />
+
+      <button
+        className="order-btn"
+        onClick={() => {
+          setMenuOpen(false);
+
+          document.getElementById("menu").scrollIntoView({
+            behavior: "smooth",
+          });
+        }}
+      >
+        <FaShoppingBag />
+        Order Now
+      </button>
+    </div>
+  </ul>
+
+  <div className="nav-actions desktop-actions">
+    <FaSearch
+      className="search-icon"
+      onClick={() => setShowSearch(true)}
+    />
+
+    <button
+      className="order-btn"
+      onClick={() =>
+        document.getElementById("menu").scrollIntoView({
+          behavior: "smooth",
+        })
+      }
+    >
+      <FaShoppingBag />
+      Order Now
+    </button>
+  </div>
+</nav>
 
 
       {showSearch && (
@@ -153,9 +219,9 @@ const handleSearch = () => {
     </div>
   </div>
 )}
-    
+  
     </>
   );
-};
+};  
 
 export default Header;

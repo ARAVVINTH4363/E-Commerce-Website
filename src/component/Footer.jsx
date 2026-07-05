@@ -100,7 +100,7 @@ export default function Footer({setCategory}){
                 </div>
             <div className="box">
               <div className="icon2"><FaPhone/></div><div><h4>Phone</h4><p>+1 (800) 123-4567</p></div></div>
-            <div className="box"><div className="icon2"><FaEnvelope/></div><div><h4>Email</h4><p>hello@sarabfood.com</p></div></div>
+            <div className="box"><div className="icon2"><FaEnvelope/></div><div><h4>Email</h4><p>tastytreat@gmail.com</p></div></div>
             <div className="box"><div className="icon2"><FaClock/></div><div><h4>Hours</h4><p>Wed-Sun : 09AM-11PM</p></div></div></div>
           </div>
         </div>

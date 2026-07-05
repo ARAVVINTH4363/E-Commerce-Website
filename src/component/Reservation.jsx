@@ -6,8 +6,7 @@ import {
   FaUsers,
   FaMapMarkerAlt
 } from "react-icons/fa";
-
-
+import axios from "axios";
 
 const Reservation = () => {
   const [formData, setFormData] = useState({
@@ -21,6 +20,7 @@ const Reservation = () => {
   });
 
   const [errors, setErrors] = useState({});
+  const [showPopup, setShowPopup] = useState(false);
 
   const validate = () => {
     let newErrors = {};
@@ -58,7 +58,6 @@ const Reservation = () => {
     }
 
     setErrors(newErrors);
-
     return Object.keys(newErrors).length === 0;
   };
 
@@ -69,17 +68,42 @@ const Reservation = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (validate()) {
-      alert("Reservation Confirmed!");
-      console.log(formData);
+    if (!validate()) return;
+
+    try {
+      const response = await axios.post(
+        "http://localhost:8080/api/reservation",
+        formData
+      );
+
+      console.log(response.data);
+      setShowPopup(true);
+
+    } catch (error) {
+      console.log(error);
+      alert("Reservation failed!");
     }
   };
 
+  const closePopup = () => {
+    setShowPopup(false);
+
+    setFormData({
+      fullName: "",
+      phone: "",
+      email: "",
+      guests: "1 Person",
+      date: "",
+      time: "",
+      request: ""
+    });
+  };
+
   return (
-    <section className="reservation" >
+    <section className="reservation">
       <div className="left-box">
         <h2>Contact Info</h2>
 
@@ -88,10 +112,7 @@ const Reservation = () => {
         </p>
 
         <div className="contact-item">
-          <div className="icon-box">
-            <FaClock />
-          </div>
-
+          <div className="icon-box"><FaClock /></div>
           <div>
             <h4>OPENING HOURS</h4>
             <p>Wed - Sun, 9 AM - 11 PM</p>
@@ -99,10 +120,7 @@ const Reservation = () => {
         </div>
 
         <div className="contact-item">
-          <div className="icon-box">
-            <FaPhoneAlt />
-          </div>
-
+          <div className="icon-box"><FaPhoneAlt /></div>
           <div>
             <h4>CALL FOR BOOKING</h4>
             <p>+1 (800) 123-4567</p>
@@ -110,10 +128,7 @@ const Reservation = () => {
         </div>
 
         <div className="contact-item">
-          <div className="icon-box">
-            <FaUsers />
-          </div>
-
+          <div className="icon-box"><FaUsers /></div>
           <div>
             <h4>GROUP DINING</h4>
             <p>Special menus for 10+ guests</p>
@@ -121,10 +136,7 @@ const Reservation = () => {
         </div>
 
         <div className="contact-item">
-          <div className="icon-box">
-            <FaMapMarkerAlt />
-          </div>
-
+          <div className="icon-box"><FaMapMarkerAlt /></div>
           <div>
             <h4>LOCATION</h4>
             <p>42 Flavor Street, NY</p>
@@ -139,7 +151,8 @@ const Reservation = () => {
             <input
               type="text"
               name="fullName"
-              placeholder="John Doe"
+              value={formData.fullName}
+              placeholder="Full Name"
               onChange={handleChange}
             />
             <span>{errors.fullName}</span>
@@ -150,7 +163,8 @@ const Reservation = () => {
             <input
               type="text"
               name="phone"
-              placeholder="9876543210"
+              value={formData.phone}
+              placeholder="Phone Number"
               onChange={handleChange}
             />
             <span>{errors.phone}</span>
@@ -163,7 +177,8 @@ const Reservation = () => {
             <input
               type="email"
               name="email"
-              placeholder="you@email.com"
+              value={formData.email}
+              placeholder="Email"
               onChange={handleChange}
             />
             <span>{errors.email}</span>
@@ -171,7 +186,11 @@ const Reservation = () => {
 
           <div>
             <label>Guests *</label>
-            <select name="guests" onChange={handleChange}>
+            <select
+              name="guests"
+              value={formData.guests}
+              onChange={handleChange}
+            >
               <option>1 Person</option>
               <option>2 People</option>
               <option>3 People</option>
@@ -183,13 +202,23 @@ const Reservation = () => {
         <div className="row">
           <div>
             <label>Date *</label>
-            <input type="date" name="date" onChange={handleChange} />
+            <input
+              type="date"
+              name="date"
+              value={formData.date}
+              onChange={handleChange}
+            />
             <span>{errors.date}</span>
           </div>
 
           <div>
             <label>Time *</label>
-            <input type="time" name="time" onChange={handleChange} />
+            <input
+              type="time"
+              name="time"
+              value={formData.time}
+              onChange={handleChange}
+            />
             <span>{errors.time}</span>
           </div>
         </div>
@@ -198,13 +227,32 @@ const Reservation = () => {
           <label>Special Requests</label>
           <textarea
             name="request"
+            value={formData.request}
             placeholder="Allergies, dietary needs..."
             onChange={handleChange}
-          ></textarea>
+          />
         </div>
 
         <button type="submit">Confirm Reservation</button>
       </form>
+
+      {showPopup && (
+        <div className="popup">
+          <div className="popup-content">
+            <h2>Reservation Confirmed ✅</h2>
+
+            <p><b>Name:</b> {formData.fullName}</p>
+            <p><b>Phone:</b> {formData.phone}</p>
+            <p><b>Email:</b> {formData.email}</p>
+            <p><b>Guests:</b> {formData.guests}</p>
+            <p><b>Date:</b> {formData.date}</p>
+            <p><b>Time:</b> {formData.time}</p>
+            <p><b>Request:</b> {formData.request}</p>
+
+            <button onClick={closePopup}>Close</button>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
